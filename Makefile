@@ -44,7 +44,7 @@ BNS_SRCS	= ft_lstnew.c \
 			  ft_lstclear.c \
 			  ft_lstiter.c \
 			  ft_lstmap.c
-			  
+  
 				
 OBJS		= $(SRCS:%.c=%.o)
 
@@ -59,12 +59,10 @@ all: $(NAME)
 
 $(NAME):$(OBJS)
 	ar rc $(NAME) $(OBJS)
-
 bonus:$(BNS_OBJS) all
 	ar rc $(NAME) $(BNS_OBJS)
-
-clean:
-	rm -f $(OBJS) $(BNS_OBJS)
+*clean:
+	rm -f $(OBJS) //$(BNS_OBJS)
 	
 fclean: clean
 	rm -f $(NAME)
