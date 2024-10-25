@@ -6,34 +6,33 @@
 /*   By: moel-hai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:38:30 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/22 11:38:57 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/10/25 20:46:34 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	j;
 	size_t	i;
-	size_t	sum_of_arrays;
-	char	*arr;
+	size_t	j;
+	size_t	src_len;
+	size_t	dst_len;
 
-	if (!dst && dstsize == 0)
-		return (ft_strlen(src));
-	arr = (char *)src;
-	j = ft_strlen(dst);
 	i = 0;
-	if (dstsize > j)
-		sum_of_arrays = j + ft_strlen(src);
-	if (dstsize <= j)
-		return (dstsize + ft_strlen(src));
-	while (arr[i] && j < dstsize - 1)
+	j = 0;
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	if (size <= dst_len)
+		return (size + src_len);
+	while (dst[i])
+		i++;
+	while (src[j] && i < size - 1)
 	{
-		dst[j] = arr[i];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	dst[j] = '\0';
-	return (sum_of_arrays);
+	dst[i] = '\0';
+	return (src_len + dst_len);
 }
