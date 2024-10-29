@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 19:11:19 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/29 02:41:45 by moel-hai         ###   ########.fr       */
+/*   Created: 2024/10/29 02:37:16 by moel-hai          #+#    #+#             */
+/*   Updated: 2024/10/29 02:47:51 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
 	{
 		if (s[i] == (unsigned char)c)
-			return ((char *)(s + i));
+			return ((void *)(s + i));
 		i++;
 	}
 	if (!c)
-		return ((char *)(s + i));
+		return ((void *)(s + i));
 	return (0);
 }
