@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 19:12:37 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/23 19:13:00 by moel-hai         ###   ########.fr       */
+/*   Created: 2024/10/30 22:33:59 by moel-hai          #+#    #+#             */
+/*   Updated: 2024/10/30 22:34:00 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	size_t			i;
+	char			*str;
 
+	if (!s)
+		return (0);
+	if (start >= ft_strlen (s))
+	{
+		p = malloc (1);
+		if (!p)
+			return (NULL);
+		*p = '\0';
+		return (p);
+	}
+	if (len > ft_strlen (s + start))
+		len = ft_strlen (s + start);
 	i = 0;
-	j = ft_strlen(s1);
-	str = malloc (sizeof(char) * (j + 1));
+	str = malloc (len + 1);
 	if (!str)
-		return (NULL);
-	while (s1[i])
-		str[i] = s1[i++];
+		return (0);
+	while (i < len)
+		str[i++] = s[start++];
 	str[i] = '\0';
 	return (str);
 }

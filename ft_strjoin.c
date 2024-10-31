@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_strcat(char *dest, char *src)
+static void	ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	j;
@@ -34,7 +34,7 @@ void	ft_strcat(char *dest, char *src)
 	dest[i] = '\0';
 }
 
-char	*if_empty(void)
+static char	*if_empty(void)
 {
 	char	*str;
 
@@ -56,6 +56,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	while (i < size)
 		all_len += ft_strlen(strs[i++]);
 	s = malloc(sizeof(char) * all_len + 1);
+	if (!s)
+		return (NULL);
 	s[0] = '\0';
 	i = 0;
 	while (i < size)
