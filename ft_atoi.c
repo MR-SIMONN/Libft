@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	skip_it(char *str, int *pi)
+static int	skip_it(char *str, int *pi)
 {
 	int	i;
 	int	sign;

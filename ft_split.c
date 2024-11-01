@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 01:50:10 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/31 17:16:12 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:20:04 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ static int	ft_cw(char *str, char c)
 	return (words);
 }
 
-static char 	*ft_strduup(char *s, int *i, char c)
+static char	*ft_strduup(char *s, int *i, char c)
 {
 	char	*str;
-	int	j;
-	int	index;
+	int		j;
+	int		index;
 
 	index = *i;
 	j = 0;
@@ -71,14 +71,30 @@ static char 	*ft_strduup(char *s, int *i, char c)
 	return (str);
 }
 
+void	free_all(char **s, int i)
+{
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{
+		free (s[j++]);
+		i++;
+	}
+	free (s);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
 	char	**str;
 
-	(1) && (i = 0, j = 0);
-	str = malloc(sizeof(char *) * (ft_cw((char *)s,c) + 1));
+	if (!s)
+		return (NULL);
+	i = 0;
+	j = 0;
+	str = malloc(sizeof(char *) * (ft_cw((char *)s, c) + 1));
 	if (!str)
 		return (NULL);
 	while (s[i] == c && s[i])
@@ -87,6 +103,8 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c)
 			str[j++] = ft_strduup((char *)s, &i, c);
+		if (!(str + j))
+			free_all(str, j);
 		else
 			i++;
 	}
@@ -97,8 +115,8 @@ char	**ft_split(char const *s, char c)
 int	main(void)
 {
 	char	**result;
-	char	str[] = "          Hello    this    is   a   test    
-	string    with    multiple    spaces      ";
+	char	str[] = "          Hello    this    is   a   test    string    
+	with    multiple    spaces      ";
 	int		i = 0;
 
 	result = ft_split(str, ' ');
