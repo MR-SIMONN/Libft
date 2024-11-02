@@ -33,7 +33,7 @@ char	*ft_itoa(int n)
 
 	temp = (long)n;
 	len = nbr_len (n);
-	str = (char*)malloc(len + 1);
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
@@ -45,11 +45,11 @@ char	*ft_itoa(int n)
 	if (temp == 0)
 		str[0] = '0';
 	while (temp)
-    {
-        str[--len] = (temp % 10) + '0';
-        temp /= 10;
-    }
-    return (str);
+	{
+		str[--len] = (temp % 10) + '0';
+		temp /= 10;
+	}
+	return (str);
 }
 /*
 #include <stdio.h>

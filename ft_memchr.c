@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:37:16 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/01 11:41:31 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/02 21:48:18 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)(s + i));
 		i++;
 	}
-	if (!c)
-		return ((void *)(s + i));
 	return (0);
 }

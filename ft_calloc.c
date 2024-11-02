@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:05:37 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/30 19:58:56 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/02 21:58:59 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if (!z)
 		return (NULL);
 	ft_bzero(z, l);
+	return (z);
 }
 /*
 int main() {

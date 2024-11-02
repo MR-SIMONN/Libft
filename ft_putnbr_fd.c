@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 00:23:05 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/31 00:23:06 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/02 07:35:16 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	nbr;
 
-	nbr = nb;
+	nbr = n;
 	if (nbr < 0)
 	{
 		ft_putchar_fd('-', fd);

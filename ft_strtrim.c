@@ -6,69 +6,75 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 08:31:51 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/01 08:31:52 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/02 22:10:20 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_set(char *str, char *set)
+static int	ft_ifchar(char *str, char c)
 {
-	int	i;
-	int	j;
+	int	a;
 
-	i = 0;
-	j = 0;
-	while (str[i] && str[i] == set[j])
+	a = 0;
+	while (str[a])
 	{
-		i++;
-		j++;
+		if (str[a] == c)
+			return (1);
+		a++;
 	}
-	return (i);
-}
-
-static int	rev_is_set(char *str, char *set)
-{
-	int	i;
-	int	j;
-
-	i = ft_strlen(str) - 1;
-	j = ft_strlen(set) - 1;
-	while (str[i] && str[i] == set[j] && j)
-	{
-		i--;
-		j--;
-	}
-	return (i);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*s;
-	int		i;
 	int		j;
-	int		len;
+	int		k;
+	char	*p;
+	int		i;
 
-	if (!s1 || !set)
-		return (NULL);
-	s = malloc ((ft_strlen ((char *)s1) - (ft_strlen((char *)set) * 2)) + 1);
-	if (!s)
-		return (NULL);
-	i = is_set((char *)s1, (char *)set);
+	i = 0;
 	j = 0;
-	len = rev_is_set((char *)s1, (char *)set);
-	while (s1[i] && i < len)
-		s[j++] = s1[i++];
-	s[j] = '\0';
-	return (s);
+	if (!s1 || !set)
+		return ((char *)s1);
+	k = ft_strlen(s1);
+	while (s1[j] && ft_ifchar((char *)set, s1[j]))
+		j++;
+	while (j < k && ft_ifchar((char *)set, s1[k - 1]))
+		k--;
+	p = malloc(sizeof(char) * (k - j + 1));
+	if (p == NULL)
+		return (NULL);
+	while (j < k)
+	{
+		p[i] = s1[j];
+		i++;
+		j++;
+	}
+	p[i] = '\0';
+	return (p);
 }
-/*
-int main ()
-{
-    const char str[] = "b3bola simo is happy b3bola";
-    const char s[] = "b3bola";
-    char *res = ft_strtrim(str, s);
-    printf ("%s\n", res);
-    free (res);
-}
-*/
+// #include <stdio.h>
+// int    main(void)
+// {
+//     char d[] = "     saad    afsaadaf    saad      ";
+//     char s[] = "saad";
+//     char *p;
+//     int    a;
+//     a = 0;
+//     p = ft_strtrim(d, s);
+//     while (p[a])
+//     {
+//         printf("%c", p[a]);
+//         a++;
+//     }
+// }
+// #include <stdio.h>
+// int main ()
+// {
+//     const char str[] = "b3bola simo is happy b3bola";
+//     const char s[] = "b3bola";
+//     char *res = ft_strtrim(str, s);
+//     printf ("%s\n", res);
+//     free (res);
+// }
