@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 23:43:25 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/30 23:43:26 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/03 21:50:52 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (fd < 0)
+		return ;
 	i = 0;
 	while (s[i])
 		ft_putchar_fd(s[i++], fd);

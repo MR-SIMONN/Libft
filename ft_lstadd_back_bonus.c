@@ -1,34 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 00:23:05 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/02 07:35:16 by moel-hai         ###   ########.fr       */
+/*   Created: 2024/11/04 06:23:35 by moel-hai          #+#    #+#             */
+/*   Updated: 2024/11/04 06:23:36 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	long	nbr;
+	t_list	*p;
 
-	if (fd < 0)
+	if (!lst || !new || !(*lst))
 		return ;
-	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nbr *= -1;
-	}
-	if (nbr > 9)
-	{
-		ft_putnbr_fd(nbr / 10, fd);
-		ft_putnbr_fd(nbr % 10, fd);
-	}
-	else
-		ft_putchar_fd(nbr + '0', fd);
+	p = ft_lstlast(*lst);
+	p->next = new;
 }
+/*
+#include <stdio.h>
+
+int main ()
+{
+	t_list p1;
+	t_list p2;
+	t_list p3;
+	t_list *p;
+
+	p = &p1;
+
+	p1.content = "my name is ";
+	p1.next = &p2;
+
+	p2.content = "simon and i am ";
+	p2.next = &p3;
+
+	p3.content = "21 :)";
+	p3.next = NULL;
+	ft_lstadd_back(&p, ft_lstnew("hello"));
+	printf ("%d", ft_lstsize(&p1));
+}
+*/

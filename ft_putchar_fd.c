@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 23:38:31 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/10/30 23:38:34 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/03 21:45:13 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
+	if (fd < 0)
+		return ;
 	write (fd, &c, 1);
 }

@@ -25,4 +25,4 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
-	.phony all clean fclean
+.phony: all clean fclean
