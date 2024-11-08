@@ -6,11 +6,22 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 23:23:37 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/02 21:07:10 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:18:15 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char *check_null(char const *s1, char const *s2)
+{
+	if (!s1 && !s2)
+		return (NULL);
+	if ( s1 == NULL)
+        return (ft_strdup(s2));
+    if ( s2 == NULL)
+        return (ft_strdup(s1));
+    return (NULL);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -19,9 +30,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*tab;
 	int		len;
 
+	if (!s1 || !s2)
+		return (check_null(s1, s2));
 	i = 0;
 	j = 0;
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (0);
 	len = ft_strlen (s1) + ft_strlen (s2);
 	tab = malloc (len + 1);
@@ -35,3 +48,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	tab[j] = '\0';
 	return (tab);
 }
+// #include <stdio.h>
+// int main ()
+// {
+// 	char *str = NULL;
+// 	char *st = "is happy";
+// 	printf ("%s", ft_strjoin(str, st));
+// }

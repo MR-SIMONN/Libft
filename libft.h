@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:47:51 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/05 19:27:25 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:25:27 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif
+
+
+

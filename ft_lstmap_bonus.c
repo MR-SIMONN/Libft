@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 02:21:36 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/05 19:24:48 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/05 19:51:42 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,42 +41,48 @@ t_list    *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	p->next = NULL;
 	return (prev_p);
 }
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// int main ()
-// {
-// 	char str[] = "first of all ";
-// 	t_list *t = ft_lstnew(str);
-// 	t_list p1;
-// 	t_list p2;
-// 	t_list p3;
-	
-// 	t_list *p2;
+void	del(void *content)
+{
+	free(content);
+}
 
-// 	t_list *p = &p1;
-	
-// 	p1.content = "my name is ";
-// 	p1.next = &p2;
+void	*increment(void *content)
+{
+	int	*new_content = malloc(sizeof(int));
+	*new_content = *(int *)content + 1;
+	return (new_content);
+}
 
+int	main(void)
+{
+	t_list	*list;
+	t_list	*new_list;
+	t_list	*node;
+	int		*val1 = malloc(sizeof(int));
+	int		*val2 = malloc(sizeof(int));
+	int		*val3 = malloc(sizeof(int));
+	*val1 = 1;
+	*val2 = 2;
+	*val3 = 3;
 
-// 	p1.content = "my name is ";
-// 	p1.next = &p2;
+	list = ft_lstnew(val1);
+	list->next = ft_lstnew(val2);
+	list->next->next = ft_lstnew(val3);
 
-// 	p2.content = "simon and i am ";
-// 	p2.next = &p3;
+	new_list = ft_lstmap(list, increment, del);
 
-// 	p3.content = "21 :)";
-// 	p3.next = NULL;
+	node = new_list;
+	while (node)
+	{
+		printf("%d\n", *(int *)(node->content));
+		node = node->next;
+	}
 
-	
-	
-// 	p2 = ft_lstmap(p, ft_tolower, free)
-// 	while (p)
-// 	{
-// 		printf ("%s", p->content);
-// 		p = p->next;
-// 	}
-// 	free(t);
-// }
+	ft_lstclear(&list, del);
+	ft_lstclear(&new_list, del);
+	return (0);
+}

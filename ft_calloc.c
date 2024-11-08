@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:05:37 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/04 06:32:16 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:31:06 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	l;
 
 	l = count * size;
-	if ((l / count) != size)
+	if (count && (l / count) != size)
 		return (NULL);
 	z = malloc(l);
 	if (!z)

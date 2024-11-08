@@ -6,13 +6,14 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 01:50:10 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/02 05:49:51 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:45:37 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int	ft_cw(char *str, char c)
+static int	ft_cw(const char *str, char c)
 {
 	int	i;
 	int	words;
@@ -40,11 +41,8 @@ static int	ft_cw(char *str, char c)
 
 static void	free_all(char **s, int i)
 {
-	int	j;
-
-	j = 0;
-	while (j < i)
-		free (s[j++]);
+	while (i--)
+		free (s[i]);
 	free (s);
 }
 
@@ -87,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	size_t	k;
 	char	**str;
 
-	(1) && (i = 0, k = 0, str = malloc (8 * (ft_cw((char *)s, c) + 1)));
+	(1) && (i = 0, k = 0, str = malloc (8 * (ft_cw(s, c) + 1)));
 	if (!str)
 		return (NULL);
 	while (s[i] == c && s[i])
@@ -98,38 +96,25 @@ char	**ft_split(char const *s, char c)
 		{
 			str[k] = ft_stridup((char *)s, &i, c);
 			if (!str[k++])
-			{
-				free_all(str, i);
-				return (NULL);
-			}
+				return (free_all(str, --k),NULL);
 		}
 		while (s[i] == c && s[i])
 			i++;
 	}
-	str[k] = 0;
-	return (str);
+	return (str[k] = 0,str);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	**result;
-	// char str[] = "  simon   ";
-	char	str[] = "          Hello    this    is   a   
-    test    string    with    multiple    spaces      ";
-	int		i = 0;
 
-	result = ft_split(str, ' ');
+// int	main(void)
+// {
+// 	char	**result;
+// 	// char str[] = "  simon   ";
+// 	char	str[] = "hello";
+// 	int		i = 0;
 
-	// Print each word in the split result
-	while (result[i])
-	{
-		printf("Word %d: %s\n", i, result[i]);
-		free(result[i]);  // Free each word after printing
-		i++;
-	}
-	free(result);  // Free the array of word pointers
+// 	result = ft_split(str, ' ');
+// 	for(int i = 0;result[i];i++)
+// 		printf("%s\n",result[i]);
 
-	return (0);
-}
-*/
+// 	return (0);
+// }
+

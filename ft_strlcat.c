@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:38:30 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/03 21:48:10 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:06:30 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // int main ()
 // {
 // 	char dest[] = "simon";
-// 	char src[] = "is a heroooo";
+// 	char *src = NULL;
 // 	size_t size = 7;
 // 	printf ("%zu\n", ft_strlcat(dest, src, size));
 // 	printf ("%s\n", dest);
-// 	printf ("%lu\n", strlcat(dest, src, size));
-// 	printf ("%s\n", dest);
+// // 	printf ("%lu\n", strlcat(dest, src, size));
+// // 	printf ("%s\n", dest);
 // }
