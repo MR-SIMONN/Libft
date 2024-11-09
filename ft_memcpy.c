@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:15:06 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/02 21:24:42 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/09 00:23:12 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*s;
 	size_t			i;
 
-	if (!dst && !src)
-		return (dst);
+	if(dst == src)
+		return dst;
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
 	i = 0;
@@ -30,15 +30,14 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/*
-#include <stdio.h>
-#include <string.h>
 
-int main ()
-{
-	char d[30];
-	char s[] = "simon is happy";
-	printf("%s\n", ft_memcpy(d, s, 30));
-	printf("%s\n", memcpy(d, s, 30));
-}
-*/
+// #include <stdio.h>
+// #include <string.h>
+
+// int main ()
+// {
+// 	// char d[30];
+// 	char s[] = "simon is happy";
+// 	// printf("%s\n", ft_memcpy(s, s, 50));
+// 	printf("%s\n", memcpy(s, s, 5));
+// }

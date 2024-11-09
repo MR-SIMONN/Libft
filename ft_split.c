@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 01:50:10 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/08 11:45:37 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/09 01:06:19 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	size_t	k;
 	char	**str;
 
+	if (!s)
+		return (NULL);
 	(1) && (i = 0, k = 0, str = malloc (8 * (ft_cw(s, c) + 1)));
 	if (!str)
 		return (NULL);
@@ -96,12 +98,12 @@ char	**ft_split(char const *s, char c)
 		{
 			str[k] = ft_stridup((char *)s, &i, c);
 			if (!str[k++])
-				return (free_all(str, --k),NULL);
+				return (free_all(str, --k), NULL);
 		}
 		while (s[i] == c && s[i])
 			i++;
 	}
-	return (str[k] = 0,str);
+	return (str[k] = 0, str);
 }
 
 // int	main(void)
@@ -110,11 +112,8 @@ char	**ft_split(char const *s, char c)
 // 	// char str[] = "  simon   ";
 // 	char	str[] = "hello";
 // 	int		i = 0;
-
 // 	result = ft_split(str, ' ');
 // 	for(int i = 0;result[i];i++)
 // 		printf("%s\n",result[i]);
-
 // 	return (0);
 // }
-

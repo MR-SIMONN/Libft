@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 08:31:51 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/02 22:10:20 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/09 00:26:00 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_ifchar(char *str, char c)
 
 	a = 0;
 	while (str[a])
-	{
+	{ 
 		if (str[a] == c)
 			return (1);
 		a++;

@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 23:23:37 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/08 10:18:15 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/09 00:37:21 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (check_null(s1, s2));
 	i = 0;
 	j = 0;
-	if (!s1 && !s2)
-		return (0);
 	len = ft_strlen (s1) + ft_strlen (s2);
 	tab = malloc (len + 1);
 	if (!tab)
