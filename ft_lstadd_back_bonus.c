@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 06:23:35 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/04 06:23:36 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/10 07:11:06 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*p;
 
-	if (!lst || !new || !(*lst))
+	if (!lst || !new)
 		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	p = ft_lstlast(*lst);
 	p->next = new;
 }

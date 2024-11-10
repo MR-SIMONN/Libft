@@ -11,15 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-size_t size(const char *s,size_t dsize)
-{
-	size_t i;
-	i = 0;
-	while (i < dsize && s[i])
-		i++;
-	return i;
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

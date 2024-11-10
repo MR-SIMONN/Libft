@@ -18,7 +18,7 @@ static int	ft_ifchar(char *str, char c)
 
 	a = 0;
 	while (str[a])
-	{ 
+	{
 		if (str[a] == c)
 			return (1);
 		a++;

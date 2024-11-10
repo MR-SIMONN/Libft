@@ -14,7 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	unsigned char cc;
+	unsigned char	cc;
 
 	if (c < 0 || c > 255)
 		return (0);

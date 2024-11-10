@@ -36,11 +36,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // {
 // 	// char *d = NULL;
 // 	// char s[] = "simon is happy";
-
 // 	char *a = "ss";
 // 	memmove(a, a, -1);
 // 	// ft_memmove(a, a, -1);
 // 	// printf("%s\n", ft_memmove(d, s, 30));
 // 	// printf("%s\n", memmove(d, s, 30));
 // }
-

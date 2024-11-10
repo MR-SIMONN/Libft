@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-static char *check_null(char const *s1, char const *s2)
+static char	*check_null(char const *s1, char const *s2)
 {
 	if (!s1 && !s2)
 		return (NULL);
-	if ( s1 == NULL)
-        return (ft_strdup(s2));
-    if ( s2 == NULL)
-        return (ft_strdup(s1));
-    return (NULL);
+	if (s1 == NULL)
+		return (ft_strdup(s2));
+	if (s2 == NULL)
+		return (ft_strdup(s1));
+	return (NULL);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
