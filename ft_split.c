@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 01:50:10 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/09 01:06:19 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/12 09:34:46 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,15 +105,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (str[k] = 0, str);
 }
-
-// int	main(void)
-// {
-// 	char	**result;
-// 	// char str[] = "  simon   ";
-// 	char	str[] = "hello";
-// 	int		i = 0;
-// 	result = ft_split(str, ' ');
-// 	for(int i = 0;result[i];i++)
-// 		printf("%s\n",result[i]);
-// 	return (0);
-// }

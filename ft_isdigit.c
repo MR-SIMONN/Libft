@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:16:33 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/10 04:54:28 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:33:56 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c < 0 || c > 255)
-		return (0);
-	if ((unsigned char)c >= '0' && (unsigned char)c <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }

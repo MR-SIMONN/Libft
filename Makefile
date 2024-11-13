@@ -13,7 +13,7 @@ BOBJS    = ${BSRCS:.c=.o}
 NAME    = libft.a
 LIB		= ar rc
 CC		= cc
-RM		= rm -f
+RM		= rm -f 
 CFLAGS	= -Wall -Wextra -Werror 
 
 all: ${NAME}
@@ -24,7 +24,7 @@ all: ${NAME}
 ${NAME}: ${OBJS} 
 	${LIB} ${NAME} ${OBJS}
 
-bonus: ${OBJS} ${BOBJS}
+bonus: ${BOBJS}
 	${LIB} ${NAME} ${BOBJS}
 clean:
 	${RM} ${OBJS} ${BOBJS}
@@ -33,4 +33,4 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
-.PHONY: all clean fclean bonus
+.PHONY:  clean

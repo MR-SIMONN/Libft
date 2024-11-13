@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 06:30:53 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/10 04:29:27 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/11 05:42:58 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,3 @@ void	*ft_memset(void *b, int c, size_t len)
 		b2[i++] = (unsigned char)c;
 	return (b);
 }
-// #include <libc.h>
-// int main()
-// {
-// 	ali x;
-// 	printf("%lu", sizeof(ali));
-// 	// x.c == -1337;
-// 	// x.a == 2005;	
-// }

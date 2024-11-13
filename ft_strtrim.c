@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 08:31:51 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/09 00:26:00 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:32:50 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	p[i] = '\0';
 	return (p);
 }
-// #include <stdio.h>
-// int    main(void)
-// {
-//     char d[] = "     saad    afsaadaf    saad      ";
-//     char s[] = "saad";
-//     char *p;
-//     int    a;
-//     a = 0;
-//     p = ft_strtrim(d, s);
-//     while (p[a])
-//     {
-//         printf("%c", p[a]);
-//         a++;
-//     }
-// }
-// #include <stdio.h>
-// int main ()
-// {
-//     const char str[] = "b3bola simo is happy b3bola";
-//     const char s[] = "b3bola";
-//     char *res = ft_strtrim(str, s);
-//     printf ("%s\n", res);
-//     free (res);
-// }

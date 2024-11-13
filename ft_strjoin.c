@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 23:23:37 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/09 00:37:21 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:32:26 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	tab[j] = '\0';
 	return (tab);
 }
-// #include <stdio.h>
-// int main ()
-// {
-// 	char *str = NULL;
-// 	char *st = "is happy";
-// 	printf ("%s", ft_strjoin(str, st));
-// }

@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 10:09:39 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/01 10:09:40 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:47:54 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_itoa(int n)
 	long	len;
 	char	*str;
 
-	temp = (long)n;
+	temp = n;
 	len = nbr_len (n);
 	str = (char *)malloc(len + 1);
 	if (!str)
@@ -51,12 +51,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-int main ()
-{
-	char *s = ft_itoa(-2147483648);
-	printf ("%s", s);
-
-}
-*/
