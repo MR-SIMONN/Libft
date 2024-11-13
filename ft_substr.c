@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 22:33:59 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/04 18:59:04 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:57:50 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*str;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	if (start >= ft_strlen (s))
 	{
 		str = malloc (1);
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	str = malloc (len + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (i < len)
 		str[i++] = s[start++];
 	str[i] = '\0';

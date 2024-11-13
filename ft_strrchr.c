@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:12:07 by moel-hai          #+#    #+#             */
-/*   Updated: 2024/11/13 16:32:46 by moel-hai         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:57:13 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)(s + i));
 		i--;
 	}
-	return (0);
+	return (NULL);
 }
