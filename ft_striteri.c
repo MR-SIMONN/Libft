@@ -25,8 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-#include <stdio.h>
-int main ()
-{
-	ft_striteri(NULL, NULL);
-}
