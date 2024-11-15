@@ -16,16 +16,19 @@ CC		= cc
 RM		= rm -f 
 CFLAGS	= -Wall -Wextra -Werror 
 
+
 all: ${NAME}
 
 %.o: %.c libft.h
 	${CC} ${CFLAGS} -c $< -o  $@
+	@${LIB} ${NAME} $@
 
-${NAME}: ${OBJS} 
-	${LIB} ${NAME} ${OBJS}
+
+${NAME}: ${OBJS}
 
 bonus: ${BOBJS}
-	${LIB} ${NAME} ${BOBJS}
+
+
 clean:
 	${RM} ${OBJS} ${BOBJS}
 
